@@ -1,0 +1,7 @@
+
+     <ul class="navbar-nav"*ngFor="let category of categories | async" >
+      <li class="nav-item" >
+        <a routerLink="/product/{{category.idCategory}}" class="btn btn-primary active" role="button" routerLinkActive="active">{{category.description}}</a>
+      </li>
+      </ul>
+  <router-outlet></router-outlet>

@@ -13,6 +13,9 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { UpdateCategoryComponent } from './update-category/update-category.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import {HttpClientModule} from '@angular/common/http';
+import { AdministrateurComponent } from './administrateur/administrateur.component';
+import { ClientComponent } from './client/client.component';
+import { ProuditByCategoryComponent } from './proudit-by-category/proudit-by-category.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import {HttpClientModule} from '@angular/common/http';
     ProductDetailsComponent,
     ProductListComponent,
     UpdateCategoryComponent,
-    UpdateProductComponent
+    UpdateProductComponent,
+    AdministrateurComponent,
+    ClientComponent,
+    ProuditByCategoryComponent
   ],
   imports: [
     BrowserModule,

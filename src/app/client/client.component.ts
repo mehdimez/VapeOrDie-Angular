@@ -9,9 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./client.component.css']
 })
 export class ClientComponent implements OnInit {
-
   categories: Observable<any>;
-  constructor(private categoryService: CategoryService, private router: Router) { }
+  constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
     this.reloadData();
@@ -19,6 +18,5 @@ export class ClientComponent implements OnInit {
   reloadData() {
     this.categories = this.categoryService.getCategoriesList();
   }
-
-
+  
 }

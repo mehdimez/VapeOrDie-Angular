@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: 'detailProduct/:id', component: ProductDetailsComponent},
   {path: 'updateProduct/:id', component: UpdateProductComponent},
   {path: 'client', component: ClientComponent},
-  {path: 'product/:id', component: ProuditByCategoryComponent},
+  {path: 'client/product/:id', component: ProuditByCategoryComponent},
   {path: 'admin', component: AdministrateurComponent}
 ];
 

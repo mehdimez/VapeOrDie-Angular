@@ -3,8 +3,8 @@ import {Product} from '../product';
 import {ProductService} from '../product.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Observable} from 'rxjs';
-import {CategoryService} from '../category.service';
 import {Category} from '../category';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-create-product',
@@ -15,9 +15,15 @@ export class CreateProductComponent implements OnInit {
   product: Product = new Product();
   submitted = false;
   selectedCategory: Category;
+  selectedFile: File;
+  event1;
+  imgUrl: any;
+  recievedImageData: any;
+  base64Data: any;
+  convertImage: any;
   categoriesList: Observable<any>;
 
-  constructor(private productService: ProductService, private router: Router) {
+  constructor(private productService: ProductService, private router: Router, private httpClient: HttpClient) {
   }
 
   ngOnInit() {
@@ -28,7 +34,9 @@ export class CreateProductComponent implements OnInit {
     this.submitted = false;
     this.product = new Product();
   }
-
+  onFileChanged(event) {
+    this.selectedFile = event.target.files[0];
+  }
   save() {
     this.productService.createProduct(this.product, this.product.Productcategory.idCategory)
       .subscribe(data => console.log(data), error => console.log(error));
@@ -45,4 +53,13 @@ export class CreateProductComponent implements OnInit {
     this.submitted = true;
     this.save();
   }
-}
+  public onFileChange(event) {
+    console.log(event);
+    this.selectedFile = event.target.file;
+    const reader = new FileReader();
+    reader.readAsDataURL(event.target.file);
+    reader.onload = (event2) => {
+      this.imgUrl = reader.result;
+    };
+  }
+  }

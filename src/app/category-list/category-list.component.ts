@@ -31,4 +31,8 @@ export class CategoryListComponent implements OnInit {
     this.reloadData();
     this.router.navigate(['updateCategory', id]);
   }
+  addCategory() {
+    this.reloadData();
+    this.router.navigate(['addCategory']);
+  }
 }

@@ -7,16 +7,24 @@
     </div>
     <div class="form-group">
       <label for="description">Product description</label>
-      <input type="text" class="form-control" id="description" required="true" [(ngModel)]="product.description" name="description">
+      <input type="text" class="form-control" id="description" required="true" [(ngModel)]="product.description"
+             name="description">
     </div>
     <div class="form-group">
       <label for="quantity">Product quantity</label>
-      <input type="text" class="form-control" id="quantity" required="true" [(ngModel)]="product.quantity" name="quantity">
+      <input type="number" class="form-control" id="quantity" required="true" [(ngModel)]="product.quantity"
+             name="quantity">
     </div>
     <div class="form-group">
       <label for="price">Product price</label>
-      <input type="text" class="form-control" id="price" required="true" [(ngModel)]="product.price" name="price">
+      <input type="number" class="form-control" id="price" required="true" [(ngModel)]="product.price" name="price">
     </div>
+    <!--<div class="form-group">
+      <input type="file" (change)="onFileChange($event)"/>
+      <img [src]="imgUrl" height="200" *ngIf="imgUrl"/>
+    </div>
+       <input
+      type="file" (change)="onFileChanged($event)" #fileInput>-->
     <div class="form-group">
       <label for="Productcategory">Category</label>
       <select id="Productcategory" name="category" [(ngModel)]="product.Productcategory" class="form-control">

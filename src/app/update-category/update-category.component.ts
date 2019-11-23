@@ -19,8 +19,8 @@ export class UpdateCategoryComponent implements OnInit {
     this.category = new Category();
     this.id = this.route.snapshot.params.id;
     this.categoryService.getCategory(this.id).subscribe(data => {
-        console.log(data);
         this.category = data;
+        console.log(data);
       },
       error1 => console.log(error1));
   }

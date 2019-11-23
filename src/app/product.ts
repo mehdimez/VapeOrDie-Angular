@@ -6,5 +6,6 @@ export class Product {
   description: string;
   quantity: number;
   price: number;
+  image: string;
   Productcategory: Category;
 }

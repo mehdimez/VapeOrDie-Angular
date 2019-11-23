@@ -32,6 +32,7 @@ export class ProductService {
   }
 
   updateProduct(idProduct: number, idCategory: number, value: any): Observable<object> {
+    console.log('update' + value);
     return this.http.put(`${this.baseUrl}/${idCategory}/${idProduct}`, value);
   }
 
